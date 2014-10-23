@@ -1,0 +1,14 @@
+.profiles {
+  padding-left: 0;
+
+  .profile {
+    padding-left: 22px;
+    list-style: none;
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+
+    @each $service in twitter, dribbble, github, flickr, 500px, gmail, skype, lastfm {
+      &.profile_#{$service} { background-image: inline-image("profile/#{$service}.gif"); }
+    }
+  }
+}

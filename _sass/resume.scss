@@ -1,0 +1,162 @@
+.resume {
+  .section {
+    position: relative;
+    @include clearfix;
+    @include padding-trailer;
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 7px;
+      content: "";
+      // @include background-image(radial-gradient(color-stops(#efefef, #FFF 75%), 50% -25%));
+    }
+
+    &:last-child:after {
+      background: none;
+    }
+
+    .section__title,
+    .section__subtitle {
+      @include push(4);
+      @include at-breakpoint($mobile-layout) {
+        @include push(0);
+      }
+    }
+
+    dl {
+      h3, p, ul {
+        margin-top: 0;
+      }
+      dt {
+        clear: both;
+        text-align: right;
+        word-wrap: break-word;
+        @include adjust-font-size-to(14px);
+        @include span-columns(4, 12);
+
+        h3 {
+          @include adjust-font-size-to(18px);
+          margin-bottom: .25em;
+
+          & + p {
+            margin-top: .25em;
+          }
+        }
+
+        @include at-breakpoint($mobile-layout) {
+          font-size: 1em;
+          text-align: left;
+          @include reset-columns;
+          h3 {
+            font-size: 1em;
+          }
+        }
+      }
+      dd {
+        margin-bottom: 1em;
+        @include span-columns(8 omega, 12);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @include at-breakpoint($mobile-layout) {
+          @include reset-columns;
+        }
+      }
+    }
+  }
+
+  .vcard {
+    .fn, .role {
+      @include push(4);
+
+      @include at-breakpoint($mobile-layout) {
+        @include reset-columns;
+        margin-left: columns(1);
+      }
+    }
+    .fn {
+      position: relative;
+
+      .photo {
+        position: absolute;
+        display: block;
+        top: .25em;
+        left: -80px;
+        width  : 64px;
+        height : 64px;
+        @include border-radius(5px);
+
+        @include at-breakpoint($mobile-layout) {
+          top: .5em;
+          left: -60px;
+          width  : 48px;
+          height : 48px;
+        }
+      }
+    }
+    .adr,
+    .email {
+      display: block;
+    }
+    .adr .type {
+      display: none;
+    }
+  }
+
+  @include at-breakpoint($mobile-layout) {
+    .resume__personal {
+      dl {
+        dt {
+          float: left;
+          display: inline-block;
+          @include adjust-font-size-to(14px);
+          &:after {
+            content: ":";
+          }
+        }
+        dd {
+          float: left;
+          margin-left: .5em;
+        }
+        dt + dd {
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+
+  .project__descr,
+  .project__url {
+    font-style: italic;
+  }
+
+  .resume__skills {
+    .skill_langs {
+      padding-left: 0;
+    }
+      .skill_lang {
+        list-style: none;
+      }
+  }
+
+  .resume__social {
+    h2 {
+      @include span-columns(4, 12);
+    }
+    ul {
+      @include span-columns(8 omega, 12);
+    }
+
+    @include at-breakpoint($mobile-layout) {
+      h2,
+      ul {
+        @include reset-columns;
+      }
+    }
+  }
+}

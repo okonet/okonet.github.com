@@ -1,0 +1,77 @@
+.clients {
+  clear: both;
+  @include clearfix;
+
+  .clients__list {
+    padding: 0;
+    list-style: none;
+    @include clearfix;
+    @include trailer;
+  }
+  .clients__heading {
+    @include push(2);
+
+    @include at-breakpoint($narrow-layout) {
+      @include push(0);
+    }
+
+    @include at-breakpoint($mobile-layout) {
+      @include push(0);
+    }
+  }
+
+  .client {
+    @include span-columns(2);
+
+    &:last-child {
+      @include omega;
+    }
+
+    &:after {
+      content: none !important;
+    }
+
+    @include at-breakpoint($narrow-layout) {
+      @include span-columns(2);
+      &:nth-child(3n) {
+        @include omega;
+      }
+    }
+
+    @include at-breakpoint($mobile-layout) {
+      @include span-columns(4);
+      @include remove-nth-omega(3n);
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        .client__descr {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+    .client__logo {
+      width: 100%;
+      /* height: 72px; */
+
+      @include at-breakpoint($mobile-layout) {
+        clear: both;
+        @include span-columns(1);
+        @include leader;
+      }
+    }
+    .client__name {
+      display: none;
+    }
+    .client__descr {
+      @include leader;
+      @include adjust-font-size-to(14px);
+      color: #000;
+
+      @include at-breakpoint($mobile-layout) {
+        @include span-columns(3 omega);
+      }
+    }
+}

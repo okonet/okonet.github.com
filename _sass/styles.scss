@@ -1,0 +1,92 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "compass/typography/vertical_rhythm";
+@import "susyone";
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$legacy-support-for-ie  : false;
+$legacy-support-for-ie6 : $legacy-support-for-ie;
+$legacy-support-for-ie7 : $legacy-support-for-ie;
+
+$total-columns  : 12;
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+$container-style: magic;
+
+$narrow-layout: 6 50em;
+$mobile-layout: 4 30em;
+
+@include establish-baseline;
+
+@import "flags";
+@import "profiles";
+@import "clients";
+@import "home";
+@import "resume";
+
+body {
+  margin: 0;
+  color: #26303C;
+  font-family: "PT Serif", Georgia, serif;
+}
+h1, h2, h3 {
+  font-style: normal;
+}
+h1 {
+  @include adjust-font-size-to(24px);
+  @include at-breakpoint($mobile-layout) {
+    @include adjust-font-size-to(21px);
+  }
+
+  & + p {
+    margin-top: lines-for-font-size(24px) * -1em;
+  }
+}
+h2 {
+  @include adjust-font-size-to(24px);
+}
+h3 {
+  @include adjust-font-size-to(16px);
+  font-weight: bold;
+}
+abbr {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  border: none;
+}
+ul {
+  margin: 0;
+  padding-left: 1.25em;
+}
+dl {
+  @include leader;
+
+  dt, dd {
+    margin-left: 0;
+    @include trailer(1);
+  }
+}
+em {
+  font-style: normal;
+}
+
+article,
+footer {
+  @include container;
+}
+
+.footer__content {
+  color: #a2a9a9;
+  @include adjust-font-size-to(13px);
+  @include padding-leader;
+  @include push(2);
+  @include at-breakpoint($mobile-layout) {
+    @include push(0);
+  }
+}
+  .footer__copy {
+    margin-left: -.85em;
+  }

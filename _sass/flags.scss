@@ -1,0 +1,9 @@
+$flag-inline: true;
+@import "flag/*.png";
+@include all-flag-sprites;
+
+.flag {
+  display: inline-block;
+  width: 16px;
+  height: 9px;
+}

@@ -1,0 +1,161 @@
+.section_about {
+  clear: both;
+  @include leader(2);
+  @include span-columns(7);
+  @include push(2);
+  @include at-breakpoint($narrow-layout) {
+    @include push(1);
+    @include reset-columns;
+  }
+  @include at-breakpoint($mobile-layout) {
+    @include push(0);
+    @include reset-columns;
+  }
+
+  ul {
+    padding: 0;
+    @include leader;
+    @include trailer;
+
+    li {
+      list-style: none;
+      display: inline-block;
+
+      &:not(:last-child):after {
+        content: ", ";
+      }
+    }
+  }
+  .skills {
+    @include leader(0);
+    @include trailer(1);
+    @include adjust-font-size-to(21px);
+
+    @include at-breakpoint($narrow-layout) {
+      @include adjust-font-size-to(20px);
+    }
+
+    @include at-breakpoint($mobile-layout) {
+      @include adjust-font-size-to(18px);
+    }
+  }
+  .photo {
+    margin-top: gutter(7) / 2;
+    margin-left: -1 * columns(1,7) - gutter(7);
+    @include span-columns(1,7);
+    @include border-radius(5px);
+
+    @include at-breakpoint($narrow-layout) {
+      @include span-columns(1,8);
+    }
+    @include at-breakpoint($mobile-layout) {
+      margin-left: 0;
+      @include span-columns(1,4);
+
+      & + p {
+        margin-left: columns(1,4) + gutter();
+      }
+    }
+  }
+
+  @include at-breakpoint($narrow-layout) {
+    @include reset-columns;
+  }
+
+  @include at-breakpoint($mobile-layout) {
+    @include reset-columns;
+  }
+}
+
+.section_resume-link {
+  @include leader(9.5);
+  @include adjust-font-size-to(13px);
+  @include span-columns(2 omega);
+  @include omega;
+  font-weight: bold;
+
+  .links {
+    padding-left: 0;
+
+    li {
+      padding-left: 18px;
+      list-style: none;
+      white-space: nowrap;
+      @include trailer;
+    }
+
+    .link_resume,
+    .link_download,
+    .link_vcard {
+      background-position: 0 5px;
+      background-repeat: no-repeat;
+    }
+
+    @each $icon in resume, download, vcard {
+      .link_#{$icon} { background-image: inline-image("link/#{$icon}.png"); }
+    }
+  }
+
+  @include at-breakpoint($narrow-layout) {
+    @include reset-columns;
+    @include push(1);
+    @include leader(-1);
+    li {
+      @include span-columns(1, 4);
+    }
+  }
+
+  @include at-breakpoint($mobile-layout) {
+    @include push(0);
+    @include leader(-1);
+    @include reset-columns;
+
+    li {
+      @include reset-columns;
+      float: left;
+      padding-left: 16px !important;
+      margin-right: .25em;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.section_oss {
+  @include span-columns(4);
+  @include push(2);
+
+  @include at-breakpoint($narrow-layout) {
+    @include span-columns(3);
+    @include push(0);
+  }
+
+  @include at-breakpoint($mobile-layout) {
+    @include reset-columns;
+    @include push(0);
+  }
+
+  ul {
+    padding-left: 0;
+
+    li {
+      padding-left: 20px;
+      list-style: none;
+      background: image-url("i-github_repo.png") 0 5px no-repeat;
+    }
+  }
+
+}
+.section_profiles {
+  @include span-columns(4);
+
+  @include at-breakpoint($narrow-layout) {
+    @include span-columns(3 omega);
+  }
+
+  @include at-breakpoint($mobile-layout) {
+    @include leader;
+    @include reset-columns;
+  }
+}

@@ -1,0 +1,83 @@
+/* line 6, ../_sass/print.scss */
+* {
+  color: #000 !important;
+  /* Black prints faster: h5bp.com/s */
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* line 12, ../_sass/print.scss */
+a,
+a:visited {
+  text-decoration: none;
+}
+
+/* line 17, ../_sass/print.scss */
+a[href]:after {
+  font-size: .85em;
+  font-style: italic;
+  content: " (" attr(href) ")";
+}
+
+/* line 23, ../_sass/print.scss */
+abbr[title]:after {
+  font-size: .85em;
+  font-style: italic;
+  content: " (" attr(title) ")";
+}
+
+/* line 29, ../_sass/print.scss */
+pre,
+blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
+/* line 35, ../_sass/print.scss */
+thead {
+  display: table-header-group;
+  /* h5bp.com/t */
+}
+
+/* line 39, ../_sass/print.scss */
+tr,
+img {
+  page-break-inside: avoid;
+}
+
+/* line 44, ../_sass/print.scss */
+img {
+  max-width: 100% !important;
+}
+
+@page {
+  margin: 0.5cm;
+}
+/* line 52, ../_sass/print.scss */
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+/* line 59, ../_sass/print.scss */
+h2,
+h3 {
+  page-break-after: avoid;
+}
+
+/* line 65, ../_sass/print.scss */
+.resume .section:after {
+  background: none;
+}
+
+/* line 70, ../_sass/print.scss */
+.section_resume-link {
+  display: none;
+}
+
+/* line 74, ../_sass/print.scss */
+footer {
+  display: none;
+}
