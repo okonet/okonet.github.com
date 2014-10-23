@@ -1,0 +1,16 @@
+<dl>
+{% for project in site.data.projects %}
+  {% if project.fork != true %}
+  <dt>
+    <h3 class="project__name">
+      <a href="{{ project.html_url }}">
+        {{ project.name }}
+      </a>
+    </h3>
+  </dt>
+  <dd>
+    <p>{{ project.description }}</p>
+  </dd>
+  {% endif %}
+{% endfor %}
+</dl>

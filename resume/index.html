@@ -10,7 +10,7 @@ layout: default
     <p>
       <span class='role'>{{ site.role }}</span>
       from
-      <span class='location'>Vienna, Austria</span>
+      <span class='location'>{{ site.addr_locality }}, {{ site.addr_country }}</span>
       <i class='flag flag-AT'></i>
     </p>
     <dl>
@@ -20,9 +20,9 @@ layout: default
       </dd>
       <dt>Address</dt>
       <dd class='adr'>
-        <span class='type'>Home</span><span class='street-address'>Castellezgasse 14/9</span><br>
-        <span class='postal-code'>1020</span><span class='locality'>Vienna</span>,
-        <span class='country-name'>Austria</span>
+        <span class='type'>{{ site.location }}</span><span class='street-address'>{{ site.addr_street }}</span><br>
+        <span class='postal-code'>{{ site.addr_postalcode }}</span><span class='locality'>{{ site.addr_locality }}</span>,
+        <span class='country-name'>{{ site.addr_country }}</span>
       </dd>
       <dt>Date of birth</dt>
       <dd>15 January 1981</dd>
@@ -362,7 +362,7 @@ layout: default
   <section class='section resume__oss'>
     <h2 class='section__title'>Open Source Projects</h2>
     <dl>
-      {% include projects.html %}
+      {% include projects_long.html %}
     </dl>
   </section>
   <section class='section resume__speaker'>
