@@ -3,10 +3,13 @@
   @include leader(2);
   @include span-columns(7);
   @include push(2);
+  display: inline-block;
+
   @include at-breakpoint($narrow-layout) {
     @include push(1);
     @include reset-columns;
   }
+
   @include at-breakpoint($mobile-layout) {
     @include push(0);
     @include reset-columns;
@@ -72,6 +75,7 @@
   @include adjust-font-size-to(13px);
   @include span-columns(2 omega);
   @include omega;
+  display: inline-block;
   font-weight: bold;
 
   .links {
@@ -100,6 +104,8 @@
     @include reset-columns;
     @include push(1);
     @include leader(-1);
+    display: block;
+
     li {
       @include span-columns(1, 4);
     }
@@ -109,9 +115,11 @@
     @include push(0);
     @include leader(-1);
     @include reset-columns;
+    display: block;
 
     li {
       @include reset-columns;
+      @include span-columns(1, 2);
       float: left;
       padding-left: 16px !important;
       margin-right: .25em;

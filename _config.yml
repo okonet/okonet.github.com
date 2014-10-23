@@ -13,3 +13,6 @@ addr_street: "Castellezgasse 14/9"
 addr_locality: "Vienna"
 addr_country: "Austria"
 addr_postalcode: "1020"
+gems:
+  - 'jekyll-compass'
+  - 'susy'
