@@ -8,8 +8,8 @@
     background-position: 0 4px;
     background-size: 16px 16px;
 
-    @each $service in twitter, dribbble, github, flickr, 500px, gmail, skype, lastfm {
-      &.profile_#{$service} { background-image: inline-image("profile/#{$service}.gif"); }
+    @each $service in twitter, dribbble, github, flickr, 500px, lastfm {
+      &.profile_#{$service} { background-image: inline-image("profile/#{$service}.png"); }
     }
   }
 }
