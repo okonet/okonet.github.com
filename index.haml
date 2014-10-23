@@ -1,0 +1,102 @@
+\---
+layout: default
+\---
+
+%section.vcard
+  %header.section_about
+    %img.photo{:alt => "{{ site.name }} portrait", :src => "{{ site.photo }}?s=128"}
+    %p<
+      Hi! I&rsquo;m
+      %em.fn<
+        %span.given-name= "{{ site.given_name }}"
+        %span.family-name= "{{ site.family_name }}"
+      %span> &nbsp;&mdash;&nbsp;a
+      %em.role
+        front-end engineer and
+        %abbr(title="User Interface") UI
+        &amp;
+        %abbr(title="User Experience") UX
+        designer
+      from
+      Yaroslavl, Russia
+      %i.flag.flag-RU
+      living in
+      %em.location Vienna, Austria
+      %i.flag.flag-AT
+    %p
+      I&rsquo;ve been working as a web-professional
+      %em since 1999
+      and became an expert in
+    %ul.skills
+      %li JavaScript &amp; CoffeeScript
+      %li HTML5 &amp; CSS3
+      %li User Interface &amp; Experience Design
+      %li Visual&nbsp;&amp;&nbsp;Graphic Design
+      %li Typography
+      %li Information&nbsp;Architecture
+      %li Usability
+      %li Accessibility
+
+  %aside.section_resume-link
+    %ul.links
+      %li.link_resume
+        %a(href='/resume') Complete resume
+      %li.link_vcard
+        %a(href="/vcard") Get a VCard
+
+  %section.section_clients.clients
+    %h3.clients__heading Clients &amp; projects I&rsquo;ve worked for:
+    %ul.clients__list
+      %li.client
+        %a(href="//colorsnapper.com/")
+          %img.client__logo(src="img/clients/colorsnapper.png")
+          %h3.client__name ColorSnapper
+          %p.client__descr Co-founder &amp; product designer of a color picker Mac&nbsp;OS&nbsp;X application.
+      %li.client
+        %a(href="//kaffemik.at/")
+          %img.client__logo(src="img/clients/kaffemik.svg")
+          %h3.client__name Kaffemik
+          %p.client__descr
+            Co-founder of the third-wave coffee shop in the heart of Vienna.
+      %li.client
+        %a(href="//sauspiel.de/")
+          %img.client__logo(src="img/clients/sauspiel.png")
+          %h3.client__name Sauspiel
+          %p.client__descr CoffeeScript/CSS3 developer of the game client available for desktop and mobile devices.
+      %li.client
+        %a(href="//jetbrains.com/")
+          %img.client__logo(src="img/clients/jetbrains.svg")
+          %h3.client__name JetBrains
+          %p.client__descr Front-end developer and UI-designer.
+      %li.client
+        %a(href="//yandex.ru/")
+          %img.client__logo(src="img/clients/yandex.svg")
+          %h3.client__name Yandex
+          %p.client__descr
+            JavaScript
+            %abbr(title="User Interface")< UI
+            \-developer for a client-side application.
+      %li.client
+        %a(href="//beanstalkapp.com/")
+          %img.client__logo(src="img/clients/beanstalk.png")
+          %h3.client__name Beanstalk
+          %p.client__descr
+            Product designer. Designed logo, promo site and the
+            %abbr(title="User Interface") UI
+            for the web application.
+
+  %section.section_oss
+    %h3
+      %a{:href => "http://github.com/okonet", :title => "okonet's Profile - GitHub"} Open Source projects
+      I&rsquo;ve worked on
+      {% include projects.html %}
+
+  %section.section_profiles
+    %h3 My public profiles at
+    {% include profiles.html %}
+
+    %p If you want to hire me, just let me know about your project and let&rsquo;s talk:
+    {% include email.html %}
+
+    %p
+      %a.twitter-follow-button{:href => "http://twitter.com/okonetchnikov"} Follow @okonetchnikov

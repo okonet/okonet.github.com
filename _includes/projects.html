@@ -1,0 +1,11 @@
+<ul class="projects">
+{% for project in site.data.projects %}
+  {% if project.fork != true %}
+  <li>
+    <a href="{{ project.html_url }}">
+      {{ project.name }}
+    </a>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
