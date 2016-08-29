@@ -58,7 +58,7 @@ namespace :data do
 
   desc 'Get OSS projects JSON data from GitHub'
   task :github do
-    uri = URI.parse('https://api.github.com/users/okonet/repos?type=owner')
+    uri = URI.parse('https://api.github.com/users/okonet/repos?sort=updated')
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     request = Net::HTTP::Get.new(uri.request_uri)
