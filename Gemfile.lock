@@ -156,6 +156,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   haml
+  jekyll
   jekyll-compass
   susy
 

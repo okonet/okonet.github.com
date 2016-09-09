@@ -43,14 +43,16 @@ end
 desc 'Parse all haml items'
 task haml: ['haml:layouts', 'haml:includes', 'haml:indexes']
 
-desc 'Parse sass files'
+desc 'Convert Sass to CSS'
 task :sass do
   require 'sass'
 
-  css = File.open('css/_sass/main.sass', 'r') { |f| Sass::Engine.new(f.read).render }
-  File.open('css/main.css', 'w') { |f| f.write css }
+  ['styles', 'print'].each do |file|
+    css = File.open("_sass/#{file}.scss", 'r') { |f| Sass::Engine.new(f.read, :syntax => :scss).render }
+    File.open("css/#{file}.css", 'w') { |f| f.write css }
+    puts "Converted #{file}.scss"
+  end
 
-  puts 'Parsed main.sass'
 end
 
 namespace :data do
