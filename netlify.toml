@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "*"
+  to = "https://www.okonet.dev/:splat"
+  status = 308
