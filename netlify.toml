@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
+  from = "https://www.okonet.ru/*"
   to = "https://www.okonet.dev/:splat"
   status = 308
