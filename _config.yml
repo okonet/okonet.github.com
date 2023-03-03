@@ -2,17 +2,12 @@ given_name: "Andrey"
 family_name: "Okonetchnikov"
 name: "Andrey Okonetchnikov"
 phone: "+43 681 10941323"
-email: "andrey@okonet.dev"
+email: "&#097;&#110;&#100;&#114;&#101;&#121;&#064;&#111;&#107;&#111;&#110;&#101;&#116;&#046;&#100;&#101;&#118;"
 role: "Front-End Engineer"
 description: "Andrey Okonetchnikov &mdash; Front-End Engineer"
 keywords: "frontend, developer, engineer, client-side, designer,JavaScript, HTML, CSS, user interface, experience, ui, ux, resume, React, design systems"
 company: "component-driven.dev"
 photo: "https://www.gravatar.com/avatar/0c6c742c4c56a2d837a5d6eb7195a8c6.jpg"
-addr_location: "home"
-addr_street: "Krakauer Straße 25/6.03"
 addr_locality: "Vienna"
 addr_country: "Austria"
 addr_postalcode: "1020"
-gems:
-  - 'jekyll-compass'
-  - 'susy'
