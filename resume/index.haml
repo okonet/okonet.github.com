@@ -20,7 +20,7 @@ layout: default
     %dl
       %dt Email
       %dd.email
-        {% include email.html %}
+        %a(href='mailto:{{site.email}}') {{site.email}}
 
       %dt Date of birth
       %dd 15 January 1981
